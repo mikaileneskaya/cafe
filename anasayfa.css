@@ -1,0 +1,713 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* *::selection {
+    background: rgb(240, 248, 255);
+    color: rgb(27, 20, 36);
+} */
+
+::-webkit-scrollbar-thumb {
+    background: rgb(240, 248, 255);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0);
+}
+
+::-webkit-scrollbar {
+    width: 13px;
+}
+
+html {
+    background-color: rgb(255, 255, 255);
+    font-family: 'Open Sans', sans-serif;
+    /* overflow-x: hidden; */
+}
+
+main {
+    font-family: 'Open Sans', sans-serif;
+}
+
+main #giris {
+    overflow: hidden;
+    background: radial-gradient(ellipse at bottom, rgb(25, 25, 49) 0%, rgb(0, 0, 0) 100%);
+    display: block;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: transparent;
+    pointer-events: none;
+    overflow: hidden
+}
+
+.star {
+    position: absolute;
+    background: linear-gradient(rgb(255, 255, 255), transparent);
+    width: calc(1px + 3px * var(--star-size));
+    height: calc(1px + 3px * var(--star-size));
+    border-radius: 50%;
+    animation: moveUp 20s linear infinite;
+    top: 100%;
+    left: calc(var(--star-x) * 100%);
+}
+
+.icerik {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+}
+
+h1 {
+    display: block;
+    font-size: 120px;
+    margin-bottom: 1px;
+    text-transform: uppercase;
+    background-image: linear-gradient(rgb(79, 98, 185), rgb(123, 23, 124));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.aciklama {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255, 0.7);
+    font-size: 20px;
+}
+
+.rez {
+    display: inline-block;
+    background: rgb(255, 255, 255, 0.7);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 10px 25px;
+    border-radius: 20px;
+    color: rgb(0, 0, 0);
+    transition: 0.3s;
+}
+
+.rez:hover {
+    background: rgb(255, 255, 255, 0.99);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(100vh);
+    }
+
+    100% {
+        transform: translateY(-100vh);
+    }
+}
+
+#slider {
+    display: flex;
+    position: relative;
+    width: calc(min(1200px, 90%));
+    margin: 0 auto;
+    padding-block: min(20vh, 3rem);
+}
+
+#slider div span {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 16px;
+    color: rgb(27, 20, 36, 0.6);
+}
+
+#slider div h2 {
+    text-transform: capitalize;
+    font-weight: 900;
+    font-size: 60px;
+    background-image: linear-gradient(45deg, rgb(79, 98, 185), rgb(27, 20, 36));
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+#slider div hr {
+    display: block;
+    background-image: linear-gradient(45deg, rgb(79, 98, 185), rgb(27, 20, 36));
+    height: 4px;
+    width: 125px;
+    border: none;
+    margin: 10px 0 20px 0;
+}
+
+#slider div p {
+    font-size: 18px;
+    color: rgb(27, 20, 36);
+}
+
+#slider a {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(27, 20, 36);
+    font-weight: 500;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    border: 2px solid rgb(27, 20, 36, 0.8);
+    margin-top: 30px;
+    padding: 10px 25px;
+    transition: 0.3s;
+}
+
+#slider div a:hover {
+    border: 2px solid rgb(27, 20, 36, 1);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.65);
+}
+
+.swiper {
+    width: 100%;
+    padding-top: 35px;
+}
+
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+    background: #fff;
+}
+
+.swiper-pagination {
+    bottom: 20px !important;
+}
+
+.swiper-slide {
+    width: 300px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+#slider .swiper-slide h3 {
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    padding-left: 20px;
+    text-transform: uppercase;
+}
+
+#slider .swiper-slide p {
+    color: rgb(255, 255, 255);
+    padding: 0 20px;
+    font-weight: 500;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+#slider .swiper-slide a {
+    margin: 15px 20px 35px 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(27, 20, 36);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.65);
+    transition: 0.15s;
+}
+
+#slider .swiper-slide a:hover {
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.65);
+}
+
+.swiper-slide div {
+    display: none;
+    opacity: 0;
+    padding-bottom: 10px;
+}
+
+.swiper-slide-active div {
+    display: block;
+    opacity: 1;
+}
+
+.swiper-slide--one {
+    background: linear-gradient(to top, rgb(0, 0, 0, 0.8), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.05)), url("/kahve.webp") no-repeat 50% 50%/cover;
+}
+
+.swiper-slide--two {
+    background: linear-gradient(to top, rgb(0, 0, 0, 0.8), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.05)), url("/kofte.jpg") no-repeat 50% 50%/cover;
+}
+
+.swiper-slide--three {
+    background: linear-gradient(to top, rgb(0, 0, 0, 0.8), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.05)), url("/cay.jpg") no-repeat 50% 50%/cover;
+}
+
+.swiper-slide--four {
+    background: linear-gradient(to top, rgb(0, 0, 0, 0.8), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.05)), url("/ice-latte.webp") no-repeat 50% 50%/cover;
+}
+
+.swiper-slide--five {
+    background: linear-gradient(to top, rgb(0, 0, 0, 0.8), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.05)), url("/tost.jpg") no-repeat 50% 50%/cover;
+}
+
+.swiper-3d .swiper-slide-shadow-left,
+.swiper-3d .swiper-slide-shadow-right {
+    background-image: none;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: rgb(255, 255, 255);
+}
+
+#iletisim {
+    background: linear-gradient(to right, rgb(0, 0, 0, 0.7), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.15)), url("/caferesmi.jpg") no-repeat 50% 50%/cover;
+    width: 100%;
+    height: 600px;
+    display: flex;
+}
+
+#iletisim .genel {
+    display: inline-block;
+    width: 50%;
+    padding-top: 40px;
+    padding-left: 75px;
+    padding-right: 75px;
+    margin-right: 1%;
+    color: rgb(255, 255, 255);
+    align-items: baseline;
+    position: relative;
+}
+
+#iletisim .genel h2 {
+    font-size: 60px;
+    font-weight: 900;
+}
+
+#iletisim .genel hr {
+    display: block;
+    background-image: linear-gradient(45deg, rgb(255, 255, 255), rgb(79, 98, 185));
+    height: 4px;
+    width: 125px;
+    border: none;
+    margin: 5px 0 20px 0;
+}
+
+#iletisim .genel ul li {
+    font-size: 21px;
+    list-style: none;
+}
+
+#iletisim .genel ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    margin-left: 8px;
+}
+
+#iletisim .genel .saatler {
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    border: 4px solid white;
+    border-radius: 50px;
+    width: 350px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 0;
+    font-size: 30px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+#iletisim .genel .saatler i {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+main #iletisim .genel .btn-menu {
+    text-transform: uppercase;
+    display: block;
+    text-decoration: none;
+    padding: 10px 0;
+    border-radius: 25px;
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    transition: 0.3s;
+    width: 350px;
+}
+
+main #iletisim .genel .btn-menu:hover {
+    width: 375px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+#iletisim .harita {
+    display: inline-flex;
+    width: 47%;
+    margin-right: 1%;
+    margin-left: 2%;
+    align-items: center;
+
+}
+
+footer {
+    display: block;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    width: 100%;
+    padding: 40px 0 80px 0;
+    text-align: center;
+}
+
+footer h3 {
+    font-size: 35px;
+    color: rgb(255, 255, 255, 0.80);
+}
+
+footer p {
+    font-size: 20px;
+    color: rgb(255, 255, 255, 0.70);
+    margin-bottom: 60px;
+    padding: 0 100px;
+}
+
+footer span {
+    font-size: 22px;
+    display: block;
+}
+
+footer .tag {
+    font-size: 18px;
+    margin-top: 5px;
+    color: rgb(255, 255, 255, 0.6);
+}
+
+footer .tag a {
+    font-size: 18px;
+    text-decoration: none;
+    color: rgb(108, 89, 237, 0.6);
+}
+
+.scroll-to-top {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    bottom: 30px;
+    right: 30px;
+    width: 80px;
+    height: 80px;
+    font-size: 45px;
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
+}
+
+@media screen and (max-width: 1000px) {
+    .icerik {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        width: 70%;
+    }
+
+    h1 {
+        font-size: 85px;
+    }
+
+    .aciklama {
+        margin: 0 20px 20px 20px;
+        color: rgb(255, 255, 255, 0.7);
+        font-size: 18px;
+        
+    }
+
+    #slider {
+        display: block;
+        position: relative;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #slider div span {
+        font-size: 16px;
+    }
+
+    #slider div h2 {
+        text-transform: capitalize;
+        font-size: 55px;
+    }
+
+    #slider div hr {
+        display: inline-block;
+        height: 3px;
+        width: 175px;
+        margin: 5px 0 15px 0;
+    }
+
+    #slider div p {
+        font-size: 20px;
+    }
+
+    #slider a {
+        font-size: 17px;
+        margin-top: 15px;
+        padding: 10px 25px;
+    }
+
+    .swiper {
+        padding-top: 35px;
+    }
+
+    .swiper-slide {
+        width: 300px;
+        height: 450px;
+    }
+
+    #slider .swiper-slide h3 {
+        font-size: 23px;
+        margin-bottom: 5px;
+        padding: 0;
+    }
+
+    #slider .swiper-slide p {
+        padding: 0 20px;
+        font-size: 18px;
+    }
+
+    #slider .swiper-slide a {
+        margin-bottom: 45px;
+    }
+
+    .swiper-slide-active div {
+        display: block;
+        opacity: 1;
+    }
+
+    #iletisim {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    #iletisim .genel {
+        display: inline-block;
+        width: 100%;
+        padding-left: 0;
+        padding-top: 40px;
+        padding-right: 0;
+        margin-right: 0;
+    }
+
+    #iletisim .genel h2 {
+        font-size: 55px;
+        padding-left: 70px;
+    }
+
+    #iletisim .genel hr {
+        height: 4px;
+        margin-left: 70px;
+    }
+
+    #iletisim .genel ul li {
+        font-size: 20px;
+        padding-left: 70px;
+    }
+
+    #iletisim .genel .saatler {
+        display: block;
+        margin-top: 25px;
+        border: 4px solid white;
+        border-radius: 45px;
+        width: 350px;
+        font-size: 24px;
+    }
+
+    #iletisim .genel .saatler i {
+        font-size: 55px;
+    }
+
+    main #iletisim .genel .btn-menu {
+        font-size: 22px;
+        margin-top: 20px;
+        width: 200px;
+    }
+
+    main #iletisim .genel .btn-menu:hover {
+        width: 250px;
+    }
+
+    #iletisim .harita {
+        margin-left: 5%;
+        margin-right: 5%;
+        display: flex;
+        width: 90%;
+        margin-top: 25px;
+        padding-bottom: 40px;
+    }
+
+    footer {
+        padding: 40px 0 80px 0;
+    }
+    
+    footer h3 {
+        font-size: 30px;
+    }
+    
+    footer p {
+        font-size: 18px;
+        padding: 0 20px;
+        margin-bottom: 60px;
+    }
+    
+    footer span {
+        font-size: 18px;
+    }
+    
+    footer .tag {
+        font-size: 16px;
+    }
+    
+    footer .tag a {
+        font-size: 16px;
+    }
+    
+    .scroll-to-top {
+        bottom: 40px;
+        right: 40px;
+        width: 75px;
+        height: 75px;
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .icerik {
+        left: 0;
+        transform: translateX(-0%);
+        width: auto;
+    }
+
+    h1 {
+        font-size: 55px;
+    }
+
+    .aciklama {
+        font-size: 18px;
+    }
+
+    #slider div span {
+        font-size: 12px;
+    }
+
+    #slider div h2 {
+        font-size: 40px;
+    }
+
+    #slider div hr {
+        height: 3px;
+        width: 125px;
+        margin: 5px 0 15px 0;
+    }
+
+    #slider div p {
+        font-size: 16px;
+    }
+
+    #slider a {
+        font-size: 15px;
+    }
+
+    #slider .swiper-slide h3 {
+        font-size: 20px;
+    }
+
+    #slider .swiper-slide p {
+        font-size: 15px;
+    }
+
+    #iletisim .genel h2 {
+        font-size: 40px;
+        padding-left: 30px;
+    }
+
+    #iletisim .genel hr {
+        height: 3px;
+        margin-left: 30px;
+    }
+
+    #iletisim .genel ul li {
+        font-size: 18px;
+        padding-left: 30px;
+    }
+
+    #iletisim .genel .saatler {
+        margin-top: 20px;
+        border: 3px solid white;
+        border-radius: 40px;
+        width: 275px;
+        font-size: 20px;
+    }
+
+    #iletisim .genel .saatler i {
+        font-size: 45px;
+    }
+
+    main #iletisim .genel .btn-menu {
+        font-size: 20px;
+        width: 150px;
+    }
+
+    main #iletisim .genel .btn-menu:hover {
+        width: 200px;
+    }
+
+    footer h3 {
+        font-size: 25px;
+    }
+    
+    footer p {
+        font-size: 16px;
+    }
+    
+    footer span {
+        font-size: 15px;
+    }
+    
+    footer .tag {
+        font-size: 14px;
+    }
+    
+    footer .tag a {
+        font-size: 14px;
+    }
+    
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 70px;
+        height: 70px;
+        font-size: 45px;
+    }
+}
